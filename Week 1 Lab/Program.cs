@@ -1,5 +1,5 @@
 ﻿Console.WriteLine("Welcome to the Caesar Cipher Program!");
-Console.WriteLine("By Joshua Eagles (301078033) and ...\n");
+Console.WriteLine("By Joshua Eagles (301078033) and Muhammad Ilyas Sameer Ismail (301168447)\n");
 
 Console.WriteLine("Are you encoding or decoding?");
 Console.WriteLine("e - encoding");
@@ -37,8 +37,21 @@ static string caesarTransform(string inputString, int cipherKey)
 {
     char[] transformedLetters = inputString.Select((char character) =>
         {
-            return (char)((character - 'a' + cipherKey) % 26 + 'a');
+            // Bring the letters into the range of 0 to 25 so we can use modulo
+            char normalizedChar = (char) (character - 'a');
+
+            // Add the cipher key and modulo 26 to get the new letters with the wrap around effect
+            char transformedNormalizedChar = (char) mod(normalizedChar + cipherKey, 26);
+
+            // Add back the 'a' we removed earlier to bring this back into the proper range
+            return (char) (transformedNormalizedChar + 'a');
         }).ToArray();
 
     return string.Join("", transformedLetters);
+}
+
+// C# % operator is remainder rather than modulo, this function gives us modulo behavior for dealing with negatives
+static double mod(double a, double b)
+{
+    return a - b * Math.Floor(a / b);
 }
