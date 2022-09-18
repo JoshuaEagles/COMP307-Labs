@@ -17,7 +17,7 @@ while (true) {
 	}
 	else 
 	{
-		Console.WriteLine($"{parsedInput} + 1 = {parsedInput + 1}");
+		Console.WriteLine($"The given number {parsedInput} has been incremented to {parsedInput + 1}");
 		break;
 	}
 }
