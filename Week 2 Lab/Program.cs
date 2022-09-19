@@ -1,4 +1,4 @@
-﻿Console.WriteLine("Welcome to the n+1 program.\nJoshua Eagles (301078033) & Son Roy Almerol ()");
+﻿Console.WriteLine("Welcome to the n+1 program.\nJoshua Eagles (301078033) & Son Roy Almerol (301220547)");
 
 while (true) {
 	Console.Write("Please enter an integer: ");
